@@ -1,122 +1,45 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Reset the margin and overflow to ensure full-screen display */
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #000;
-}
-
-/* Starry Night Background */
-.starry-sky {
-    background: linear-gradient(180deg, #0c1445, #000000);
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Stars */
-.starry-sky::before, .starry-sky::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    box-shadow: 
-        10px 20px white, 20px 40px white, 30px 60px white, 40px 80px white, 
-        50px 100px white, 60px 120px white, 70px 140px white, 80px 160px white, 
-        90px 180px white, 100px 200px white, 110px 220px white, 120px 240px white,
-        130px 260px white, 140px 280px white, 150px 300px white;
-    animation: twinkle 5s infinite alternate;
-}
-
-.starry-sky::after {
-    box-shadow: 
-        -10px -20px white, -20px -40px white, -30px -60px white, -40px -80px white, 
-        -50px -100px white, -60px -120px white, -70px -140px white, -80px -160px white, 
-        -90px -180px white, -100px -200px white, -110px -220px white, -120px -240px white,
-        -130px -260px white, -140px -280px white, -150px -300px white;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.7; }
-    100% { opacity: 0.4; }
-}
-
-/* Container */
-.container {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Set background to black for night effect */
     color: #fff;
+}
+
+/* Canvas styling to fill the background */
+#starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Position behind other elements */
+}
+
+/* Optional styling for sections on top of the star background */
+header, section {
     text-align: center;
-    max-width: 400px;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    border-radius: 8px;
 }
 
-/* Title and Intro */
-.title {
-    font-size: 2.5rem;
-    color: #e6e6ff;
+/* Style for header section */
+header h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
-.intro {
-    font-size: 1.2rem;
-    color: #ccccff;
+header p {
+    font-size: 1.2em;
+    margin-top: 0;
 }
 
-/* Button */
-button {
-    background-color: #6c5ce7;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #a29bfe;
-}
-
-/* Message Reveal */
-.hidden {
-    display: none;
-    color: #98c1d9;
-    font-size: 1.1rem;
-    margin-top: 20px;
-}
-
-/* Extra Info Section */
-.extra-info h2 {
-    color: #d4afcd;
-    font-size: 1.5rem;
-    margin-top: 20px;
-}
-
-.extra-info ul {
-    list-style: none;
-    padding: 0;
-    color: #98c1d9;
-}
-
-.extra-info li {
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 8px 0;
-    padding: 8px;
-    border-radius: 5px;
-    font-weight: bold;
+/* Section headers */
+section h2 {
+    font-size: 1.5em;
+    margin-top: 0;
 }
